@@ -8,7 +8,11 @@ export default function TourDetails() {
 const navigate= useNavigate()
    const handleBook= ()=>{
     toast.success('Successfully booked! wait for further information')
+
+    setTimeout(()=>{
 navigate('/dashboard')
+
+    }, 1000)
    }
   if (!tour) {
     return <div className="p-6 text-center">Tour data not available.</div>
