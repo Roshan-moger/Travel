@@ -42,12 +42,12 @@ export default function FilterSection({
 
   return (
     <section className="text-black py-12">
-      <div className="container border-0 rounded-2xl mx-auto shadow-md">
-        <div className="max-w-8xl mx-auto p-4 rounded-t-2xl bg-gradient-to-r from-blue-600 to-blue-400">
+      <div className="container border-0 rounded-2xl mx-auto">
+        <div className="w-8xl mx-auto p-4 rounded-t-2xl bg-gradient-to-r from-blue-600 to-blue-400">
           <h2 className="text-3xl font-bold mb-2 text-white">Find Your Perfect Adventure</h2>
           <p className="text-blue-100 mb-0">Customize your search to discover amazing tours</p>
         </div>
-        <div className="max-w-8xl mx-auto rounded-b-2xl bg-white backdrop-blur-sm border border-white/20 p-6">
+        <div className="w-8xl mx-auto rounded-b-2xl bg-white backdrop-blur-sm border border-white/20 p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             {renderLocationInput()}
             {renderSelect("Accommodation Type", "accommodation", accommodationTypes)}

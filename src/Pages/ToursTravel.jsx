@@ -71,11 +71,7 @@ export default function ToursTravel() {
     if (filtered.length === 0) {
       setShowNotFound(true)
       setFilteredTours([])
-      // Reset to show all tours after 3 seconds
-      setTimeout(() => {
-        setFilteredTours(toursData)
-        setShowNotFound(false)
-      }, 3000)
+  
     } else {
       setShowNotFound(false)
       setFilteredTours(filtered)

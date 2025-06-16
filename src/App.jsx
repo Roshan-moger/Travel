@@ -1,5 +1,6 @@
 
-// import LoginPage from './Pages/LoginPage'
+import LoginPage from './Pages/LoginPage'
+import RegisterPage from './Pages/RegisterPage'
 import ToursTravel from './Pages/ToursTravel'
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 function App() {
@@ -9,9 +10,10 @@ function App() {
     <Router>
 <Routes>
 
-  {/* <Route path='/' element={<LoginPage/>}>
-  </Route> */}
+  <Route path='/' element={<LoginPage/>}>
+  </Route>
   <Route path='/dashboard' element={<ToursTravel/>}></Route>
+     <Route path="/register" element={<RegisterPage />} />
 </Routes>
 
    
