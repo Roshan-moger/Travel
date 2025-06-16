@@ -1,9 +1,11 @@
-"use client"
+
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function TourCard({ tour }) {
   const [isBooking, setIsBooking] = useState(false)
+  const navigate = useNavigate()
 
   const handleBook = () => {
     setIsBooking(true)
@@ -15,7 +17,7 @@ export default function TourCard({ tour }) {
   }
 
   const handleDetails = () => {
-    alert("Showing tour details...")
+    navigate(`/tour/${tour.id}`, { state: { tour } })
   }
 
   return (

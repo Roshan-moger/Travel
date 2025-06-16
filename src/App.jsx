@@ -1,4 +1,5 @@
 
+import TourDetails from './Components/TourDetails'
 import LoginPage from './Pages/LoginPage'
 import RegisterPage from './Pages/RegisterPage'
 import ToursTravel from './Pages/ToursTravel'
@@ -14,6 +15,8 @@ function App() {
   </Route>
   <Route path='/dashboard' element={<ToursTravel/>}></Route>
      <Route path="/register" element={<RegisterPage />} />
+             <Route path="/tour/:id" element={<TourDetails />} />
+
 </Routes>
 
    

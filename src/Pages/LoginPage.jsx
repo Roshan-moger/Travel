@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { Eye, EyeOff, LogIn, Mail } from "lucide-react"
+import toast from "react-hot-toast"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -20,8 +21,12 @@ export default function LoginPage() {
 
     if (email === "roshanmoger@gmail.com" && password === "Roshan@123") {
       navigate("/dashboard")
+      toast.success('Welcome back Roshan Moger!')
+
     } else {
-      setError("Invalid email or password. Please try again.")
+      // setError("")
+      toast.error("Invalid email or password. Please try again.")
+
     }
 
     setIsLoading(false)
@@ -88,11 +93,11 @@ export default function LoginPage() {
           </div>
 
           {/* Error */}
-          {error && (
+          {/* {error && (
             <div className="text-red-600 text-sm text-center bg-red-50 p-3 rounded-lg">
               {error}
             </div>
-          )}
+          )} */}
 
           {/* Sign In Button */}
           <button
