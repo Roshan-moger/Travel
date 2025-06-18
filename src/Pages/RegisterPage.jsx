@@ -5,12 +5,12 @@ import { Link } from "react-router-dom"
  
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-sm p-8">
         {/* Register Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-            <LogIn className="w-6 h-6 text-gray-600" />
+        <div className="flex justify-center mb-2">
+          <div className="w-12 h-12 rounded-full flex items-center justify-center">
+            <LogIn className="w-18 h-18 text-gray-600" />
           </div>
         </div>
  

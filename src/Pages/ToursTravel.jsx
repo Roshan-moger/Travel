@@ -9,9 +9,9 @@ export default function ToursTravel() {
   const [searchFilters, setSearchFilters] = useState({
     destination: "",
     accommodation: "Select accommodation",
-    duration: "duration",
-    minBudget: "0",
-    maxBudget: "0",
+    duration: "Choose duration",
+    minBudget: "Min price",
+    maxBudget: "Max price",
   })
 
   const handleFilterChange = (field, value) => {
@@ -23,7 +23,7 @@ export default function ToursTravel() {
 
   // Fixed budget parsing function
   const parseBudgetValue = (budgetString) => {
-    if (budgetString === "Any price" || budgetString === "0") return 0
+    if (budgetString === "Max price" || budgetString === "Min price") return 0
 
     // Handle different formats like "$100", "100", "$100+", etc.
     const numericValue = budgetString.replace(/[$,+]/g, "")
@@ -42,13 +42,13 @@ export default function ToursTravel() {
       const destinationMatch =
         destination === "" ||
         tour.location.toLowerCase().includes(destination.toLowerCase()) ||
-        tour.title.toLowerCase().includes(destination.toLowerCase())
-
+        tour.title.toLowerCase().includes(destination.toLowerCase()) ||
+        tour.description.toLowerCase().includes(destination.toLowerCase())
       // Accommodation filter
       const accommodationMatch = accommodation === "Select accommodation" || tour.accommodation === accommodation
 
       // Duration filter
-      const durationMatch = duration === "duration" || tour.duration === duration
+      const durationMatch = duration === "Choose duration" || tour.duration === duration
 
       // Budget filter logic
       let budgetMatch = true
@@ -68,14 +68,16 @@ export default function ToursTravel() {
       return destinationMatch && accommodationMatch && durationMatch && budgetMatch
     })
 
-    if (filtered.length === 0) {
-      setShowNotFound(true)
-      setFilteredTours([])
-  
-    } else {
-      setShowNotFound(false)
-      setFilteredTours(filtered)
-    }
+const sortedFiltered = filtered.sort((a, b) => a.price - b.price)
+
+if (sortedFiltered.length === 0) {
+  setShowNotFound(true)
+  setFilteredTours([])
+} else {
+  setShowNotFound(false)
+  setFilteredTours(sortedFiltered)
+}
+
   }
 
   return (

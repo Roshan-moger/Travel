@@ -7,14 +7,14 @@ export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState("")
+  // const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    setError("")
+    // setError("")
 
     // Simulate API delay
     await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -33,17 +33,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-sm p-8">
         {/* Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-            <LogIn className="w-6 h-6 text-gray-600" />
+        <div className="flex justify-center mb-2">
+          <div className="w-12 h-12 rounded-full flex items-center justify-center">
+            <LogIn className="w-18 h-18 text-gray-600" />
           </div>
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl font-semibold text-gray-900 text-center mb-8">
+        <h1 className="text-2xl font-semibold text-gray-900 text-center mb-10">
           Sign in to your account
         </h1>
 
@@ -103,7 +103,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+            className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 text-white font-medium py-3 px-4 rounded-lg transition-colors"
           >
             {isLoading ? "Signing In..." : "Sign In"}
           </button>
@@ -123,7 +123,6 @@ export default function LoginPage() {
         <div className="mt-6 mb-6">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300" />
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-2 bg-white text-gray-500">or continue with</span>
@@ -134,8 +133,8 @@ export default function LoginPage() {
         {/* Google Sign-In Button (disabled) */}
         <button
           type="button"
-          disabled
-          className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+         
+          className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 cursor-pointer"
         >
           <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
             <path
@@ -159,11 +158,11 @@ export default function LoginPage() {
         </button>
 
         {/* Demo Credentials */}
-        {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
           <p className="text-sm text-blue-800 font-medium mb-2">Demo Credentials:</p>
           <p className="text-xs text-blue-700">Email: roshanmoger@gmail.com</p>
           <p className="text-xs text-blue-700">Password: Roshan@123</p>
-        </div> */}
+        </div>
       </div>
     </div>
   )

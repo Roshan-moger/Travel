@@ -1,0 +1,95 @@
+// Generate highlights based on location
+ export const generateHighlights = (location) => {
+  const highlightTemplates  = {
+    India: [
+      "Explore ancient palaces and forts",
+      "Experience vibrant local markets",
+      "Traditional cultural performances",
+      "Authentic regional cuisine",
+      "Scenic landscape photography",
+      "Local artisan workshops",
+    ],
+    Iceland: [
+      "Northern Lights viewing",
+      "Glacier hiking adventures",
+      "Geothermal hot springs",
+      "Volcanic landscape tours",
+      "Wildlife spotting",
+      "Photography opportunities",
+    ],
+    France: [
+      "Iconic landmark visits",
+      "Wine tasting experiences",
+      "Art museum tours",
+      "Culinary masterclasses",
+      "Historic architecture",
+      "Luxury shopping districts",
+    ],
+    Thailand: [
+      "Pristine beach access",
+      "Island hopping tours",
+      "Traditional temple visits",
+      "Night market exploration",
+      "Water sports activities",
+      "Thai massage and spa",
+    ],
+    Japan: [
+      "Cherry blossom viewing",
+      "Traditional tea ceremonies",
+      "Modern technology tours",
+      "Authentic sushi experiences",
+      "Temple and shrine visits",
+      "Cultural workshops",
+    ],
+    Italy: [
+      "Historic canal tours",
+      "Renaissance art galleries",
+      "Authentic Italian cuisine",
+      "Architectural marvels",
+      "Romantic gondola rides",
+      "Local market visits",
+    ],
+    Greece: [
+      "Stunning sunset views",
+      "Ancient archaeological sites",
+      "Traditional Greek cuisine",
+      "Island boat tours",
+      "White-washed villages",
+      "Crystal clear beaches",
+    ],
+    Peru: [
+      "Machu Picchu exploration",
+      "Inca Trail trekking",
+      "Andean mountain views",
+      "Local community visits",
+      "Traditional weaving workshops",
+      "Sacred Valley tours",
+    ],
+    Kenya: [
+      "Big Five safari drives",
+      "Wildlife photography",
+      "Masai cultural experiences",
+      "Conservation center visits",
+      "Scenic savanna landscapes",
+      "Bird watching tours",
+    ],
+    Indonesia: [
+      "Ancient temple complexes",
+      "Rice terrace landscapes",
+      "Traditional ceremonies",
+      "Wellness and spa treatments",
+      "Volcanic mountain views",
+      "Local craft workshops",
+    ],
+    Egypt: [
+      "Pyramid and sphinx tours",
+      "Nile River cruises",
+      "Ancient temple visits",
+      "Museum artifact viewing",
+      "Desert camel rides",
+      "Pharaonic history tours",
+    ],
+  }
+
+  return highlightTemplates[location] || highlightTemplates["India"]
+}

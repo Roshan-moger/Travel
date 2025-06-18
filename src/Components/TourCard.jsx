@@ -16,8 +16,8 @@ export default function TourCard({ tour }) {
     }, 1500)
   }
 
-  const handleDetails = () => {
-    navigate(`/tour/${tour.id}`, { state: { tour } })
+  const handleDetails = (ID) => {
+    navigate(`/tour/${ID}`)
   }
 
   return (
@@ -58,7 +58,7 @@ export default function TourCard({ tour }) {
   {isBooking ? "Booking..." : "Book"}
 </button>
 <button
-  onClick={handleDetails}
+  onClick={()=>handleDetails(tour.id)}
   className="w-25 bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-2 rounded text-sm"
 >
   Details
